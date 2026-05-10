@@ -2,12 +2,12 @@ import os
 import http.server
 import socketserver
 
-# Sesuai PPT Pak Irfan
+# Buat direktori dan pindah ke sana
 if not os.path.exists('cloud-tugas'):
     os.makedirs('cloud-tugas')
 os.chdir('cloud-tugas')
 
-# Pakai nama variabel dari PPT (tapi typo DOCTYPE aku benerin ya)
+# Buat file index.html
 jls_extract_var = """<!DOCTYPE html>
 <html>
 <head>
@@ -54,6 +54,7 @@ html_content = jls_extract_var
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(html_content)
 
+# Jalankan web server (port 8080)
 PORT = 8080
 Handler = http.server.SimpleHTTPRequestHandler
 
